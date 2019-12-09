@@ -1,10 +1,14 @@
 
+using System.Text;
 using API.Application.Activities;
+using API.Application.Interfaces;
 using API.Domain;
+using API.Infrastructure;
 using API.Middleware;
 using API.Persistence;
 using FluentValidation.AspNetCore;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -12,6 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API
 {
@@ -47,8 +52,26 @@ namespace API
             identityBuilder.AddSignInManager<SignInManager<AppUser>>();*/
             services.AddDefaultIdentity<AppUser>()
                 .AddEntityFrameworkStores<DataContext>();
-            
+            /*
+             services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
 
+            .AddJwtBearer(options => {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
+                        .GetBytes("Secure secret Key abc")),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+*/
+            services.AddScoped<IJwtGenerator, JwtGenerator>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +84,7 @@ namespace API
             }
 
             //app.UseHttpsRedirection();
+            //app.UseAuthentication();
             app.UseCors("CorsPolicy");
 
             app.UseRouting();

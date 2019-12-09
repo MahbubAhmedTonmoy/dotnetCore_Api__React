@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using API.Application.Interfaces;
 using API.Domain;
 using FluentValidation;
 using MediatR;
@@ -27,11 +28,13 @@ namespace API.Application.User
 
         public class Handler : IRequestHandler<Query, User>
         {
+            private readonly IJwtGenerator _jwtGenerator;
             private readonly UserManager<AppUser> _userManager;
             private readonly SignInManager<AppUser> _signInManager;
 
-            public Handler(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+            public Handler(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IJwtGenerator jwtGenerator)
             {
+                _jwtGenerator = jwtGenerator;
                 _userManager = userManager;
                 _signInManager = signInManager;
                 
@@ -51,7 +54,7 @@ namespace API.Application.User
                     // generate token to do
                     return new User{
                         DisplayName = findUser.DisplayName,
-                        Token = "todo",
+                        Token = _jwtGenerator.CreateToken(findUser),
                         UserName = findUser.UserName,
                         Image = null
                     };

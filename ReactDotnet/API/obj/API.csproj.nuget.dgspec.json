@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mahbub\\Desktop\\ReactDotnet\\API\\API.csproj": {}
+    "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mahbub\\Desktop\\ReactDotnet\\API\\API.csproj": {
+    "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mahbub\\Desktop\\ReactDotnet\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\mahbub\\Desktop\\ReactDotnet\\API\\API.csproj",
+        "projectPath": "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj",
         "packagesPath": "C:\\Users\\mahbub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mahbub\\Desktop\\ReactDotnet\\API\\obj\\",
+        "outputPath": "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.0.0, )"
@@ -72,6 +76,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.5.0, )"
             }
           },
           "imports": [
