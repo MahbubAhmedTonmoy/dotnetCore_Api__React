@@ -52,7 +52,7 @@ namespace API
             identityBuilder.AddSignInManager<SignInManager<AppUser>>();*/
             services.AddDefaultIdentity<AppUser>()
                 .AddEntityFrameworkStores<DataContext>();
-            /*
+            
              services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -64,12 +64,12 @@ namespace API
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-                        .GetBytes("Secure secret Key abc")),
+                        .GetBytes(Configuration["tokenKey"])),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
             });
-*/
+
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             
         }
@@ -84,7 +84,7 @@ namespace API
             }
 
             //app.UseHttpsRedirection();
-            //app.UseAuthentication();
+            app.UseAuthentication();
             app.UseCors("CorsPolicy");
 
             app.UseRouting();
