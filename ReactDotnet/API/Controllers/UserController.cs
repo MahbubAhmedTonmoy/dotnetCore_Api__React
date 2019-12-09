@@ -21,5 +21,11 @@ namespace API.Controllers
         {
             return await _mediator.Send(query);
         }
+
+        [HttpPost("reg")]
+        public async Task<ActionResult<User>> Registration(Registration.Command cmd)
+        {
+            return await _mediator.Send(cmd);
+        }
     }
 }
