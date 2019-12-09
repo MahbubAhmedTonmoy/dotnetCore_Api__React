@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace API.Domain
 {
@@ -11,5 +12,6 @@ namespace API.Domain
         public DateTime Date {get;set;}
         public string City {get;set;}
         public string Venue {get;set;}
+        public ICollection<UserActivity> UserActivities {get;set;}
     }
 }
