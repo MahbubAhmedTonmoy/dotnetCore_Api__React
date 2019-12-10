@@ -19,5 +19,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0"/>
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0"/>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.0.0"/>
   </ItemGroup>
 </Project>

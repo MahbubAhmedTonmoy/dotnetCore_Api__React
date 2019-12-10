@@ -26,11 +26,15 @@ namespace API.Application.Activities
 
             public async Task<List<ActivityDTO>> Handle(Query request, CancellationToken cancellationToken)
             {
+                /* //Eager Loading
                 var a = await _context.Activities
                                         .Include(x => x.UserActivities)
                                         .ThenInclude(x => x.AppUser)
                                         .ToListAsync();
-
+                                        */
+                // Lazy Loading
+                var a = await _context.Activities.ToListAsync();
+                
                 return _mapper.Map<List<Activity>,List<ActivityDTO>>(a);
             }
         }
