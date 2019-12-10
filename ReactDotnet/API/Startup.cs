@@ -6,6 +6,7 @@ using API.Domain;
 using API.Infrastructure;
 using API.Middleware;
 using API.Persistence;
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -69,7 +70,7 @@ namespace API
                     ValidateAudience = false
                 };
             });
-
+            services.AddAutoMapper(typeof(list.Handler));
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUserAccessor, UserAccessor>();
             
