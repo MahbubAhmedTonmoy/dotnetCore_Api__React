@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using API.Application.User;
 using API.Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -26,6 +27,13 @@ namespace API.Controllers
         public async Task<ActionResult<User>> Registration(Registration.Command cmd)
         {
             return await _mediator.Send(cmd);
+        }
+        
+        [Authorize]
+        [HttpGet("currentuser")]
+        public async Task<ActionResult<User>> currentuser()
+        {
+            return await _mediator.Send(new CurrentUser.Query());
         }
     }
 }
