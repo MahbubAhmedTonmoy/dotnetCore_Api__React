@@ -4,6 +4,7 @@ using API.Application.Activities;
 using API.Application.Interfaces;
 using API.Domain;
 using API.Infrastructure;
+using API.Infrastructure.Photos;
 using API.Middleware;
 using API.Persistence;
 using AutoMapper;
@@ -84,7 +85,10 @@ namespace API
             services.AddAutoMapper(typeof(list.Handler));
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUserAccessor, UserAccessor>();
+
+            services.Configure<CloudinarySettings>(Configuration.GetSection("Cloudinary"));
             
+            services.AddScoped<IPhotoAccessor, PhotoAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

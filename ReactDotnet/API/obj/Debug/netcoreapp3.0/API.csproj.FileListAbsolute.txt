@@ -107,3 +107,4 @@ C:\Users\mahbub\Desktop\dotnetCore_Api__React\ReactDotnet\API\bin\Debug\netcorea
 C:\Users\mahbub\Desktop\dotnetCore_Api__React\ReactDotnet\API\bin\Debug\netcoreapp3.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\mahbub\Desktop\dotnetCore_Api__React\ReactDotnet\API\bin\Debug\netcoreapp3.0\Castle.Core.dll
 C:\Users\mahbub\Desktop\dotnetCore_Api__React\ReactDotnet\API\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\mahbub\Desktop\dotnetCore_Api__React\ReactDotnet\API\bin\Debug\netcoreapp3.0\CloudinaryDotNet.dll

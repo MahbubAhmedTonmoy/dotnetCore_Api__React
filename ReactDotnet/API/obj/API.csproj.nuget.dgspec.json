@@ -45,6 +45,10 @@
               "target": "Package",
               "version": "[6.1.1, )"
             },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.9.0, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[8.6.0, )"

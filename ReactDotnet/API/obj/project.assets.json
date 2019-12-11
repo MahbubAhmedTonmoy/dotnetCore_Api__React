@@ -49,6 +49,18 @@
           "lib/netstandard1.3/Castle.Core.dll": {}
         }
       },
+      "CloudinaryDotNet/1.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        }
+      },
       "FluentValidation/8.6.0": {
         "type": "package",
         "dependencies": {
@@ -2354,6 +2366,28 @@
         "lib/netstandard1.3/Castle.Core.dll",
         "lib/netstandard1.3/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "CloudinaryDotNet/1.9.0": {
+      "sha512": "2E+jY40ZNyBpRW2y57V5HtVif8ocJVdpYBPw5xOoA6QAkW6unuZ3kgllIbGPKGkIjKdggsrmtQFGkeUx59cCEw==",
+      "type": "package",
+      "path": "cloudinarydotnet/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cloudinarydotnet.1.9.0.nupkg.sha512",
+        "cloudinarydotnet.nuspec",
+        "lib/net45/CloudinaryDotNet.dll",
+        "lib/net45/CloudinaryDotNet.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/net45/System.Text.Encodings.Web.dll",
+        "lib/netcore/CloudinaryDotNet.deps.json",
+        "lib/netcore/CloudinaryDotNet.dll",
+        "lib/netcore/CloudinaryDotNet.xml",
+        "lib/netstandard1.3/CloudinaryDotNet.deps.json",
+        "lib/netstandard1.3/CloudinaryDotNet.dll",
+        "lib/netstandard1.3/CloudinaryDotNet.xml"
       ]
     },
     "FluentValidation/8.6.0": {
@@ -7656,6 +7690,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.1.1",
+      "CloudinaryDotNet >= 1.9.0",
       "FluentValidation.AspNetCore >= 8.6.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 7.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.0.0",
@@ -7676,11 +7711,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj",
+      "projectPath": "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\API.csproj",
       "packagesPath": "C:\\Users\\mahbub\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\obj\\",
+      "outputPath": "C:\\Users\\mahbub\\Desktop\\dotnetCore_Api__React\\ReactDotnet\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7713,6 +7748,10 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[6.1.1, )"
+          },
+          "CloudinaryDotNet": {
+            "target": "Package",
+            "version": "[1.9.0, )"
           },
           "FluentValidation.AspNetCore": {
             "target": "Package",
