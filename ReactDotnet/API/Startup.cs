@@ -10,6 +10,7 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -71,6 +72,15 @@ namespace API
                     ValidateAudience = false
                 };
             });
+
+            services.AddAuthorization(opt => {
+                opt.AddPolicy("IsActivityHost", policy =>
+                {
+                    policy.Requirements.Add (new IsHostRequirement());
+                });
+            });
+            services.AddTransient<IAuthorizationHandler , IsHostRequirementHandler>();
+
             services.AddAutoMapper(typeof(list.Handler));
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUserAccessor, UserAccessor>();

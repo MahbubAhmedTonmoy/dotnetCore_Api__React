@@ -46,6 +46,7 @@ namespace API.Controllers
         }
 
         [HttpPut("edit/{id}")]
+        [Authorize(Policy= "IsActivityHost")]
         public async Task<ActionResult<Unit>> Edit(Guid id, Edit.Command command)
         {
             command.Id = id;
@@ -53,6 +54,8 @@ namespace API.Controllers
         }
 
         [HttpDelete("delete/{id}")]
+        
+        [Authorize(Policy= "IsActivityHost")]
         public async Task<ActionResult<Unit>> Delete(Guid id)
         {
             return await _mediator.Send(new Delete.Command{Id = id});
