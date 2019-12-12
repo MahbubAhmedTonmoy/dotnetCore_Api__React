@@ -1,6 +1,6 @@
 using API.Domain;
+using System.Linq;
 using AutoMapper;
-
 namespace API.Application.Activities
 {
     public class MappingProfile : Profile
