@@ -52,7 +52,12 @@ namespace API.Infrastructure.Photos
 
         public string DeletePhoto(string publicId)
         {
-            throw new NotImplementedException();
+            var deleteParm = new DeletionParams(publicId);
+
+            var result = _cloudinary.Destroy(deleteParm);
+
+            return result.Result == "OK" ? result.Result : null;
+
         }
     }
 }
