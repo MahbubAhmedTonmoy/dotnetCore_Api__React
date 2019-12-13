@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Application.Followers;
+using API.Application.Profiles;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -27,5 +29,10 @@ namespace API.Controllers
             return await _mediator.Send(new Delete.Command {UserName = username});
         }
 
+        [HttpGet("{username}/followlist")]
+        public async Task<ActionResult<List<Profile>>> Followerlist(string username, string predicate)
+        {
+            return await _mediator.Send(new List.Query {UserName = username, Predicate = predicate} );
+        }
     }
 }

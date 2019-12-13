@@ -17,7 +17,7 @@ namespace API.Application.Profiles
             _context = context;
             _userAccessor = userAccessor;
         }
-        public async Task<Profile> ReadProfie(string username)
+        public async Task<Profile> ReadProfiel(string username)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName  == username);
             if(user == null)
