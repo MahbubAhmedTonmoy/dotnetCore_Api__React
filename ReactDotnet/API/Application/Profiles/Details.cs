@@ -16,22 +16,15 @@ namespace API.Application.Profiles
 
         public class Hadler : IRequestHandler<Query, Profile>
         {
-            private readonly DataContext _context;
+            private readonly IProfileReader _profileReader;
 
-            public Hadler(DataContext context)
+            public Hadler(IProfileReader profileReader)
             {
-                _context = context;
+                _profileReader = profileReader;
             }
             public async Task<Profile> Handle(Query request, CancellationToken cancellationToken)
             {
-                var finduser = await _context.Users.SingleOrDefaultAsync(x => x.UserName == request.Username);
-
-                return new Profile{
-                    DisplayName = finduser.DisplayName,
-                    Bio = finduser.Bio,
-                    Image = finduser.Photos.FirstOrDefault( x => x.IsMain).Url,
-                    Photos = finduser.Photos
-                };
+                return await _profileReader.ReadProfie(request.Username);
             }
         }
     }

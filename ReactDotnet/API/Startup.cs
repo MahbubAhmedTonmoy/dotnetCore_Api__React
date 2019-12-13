@@ -2,6 +2,7 @@
 using System.Text;
 using API.Application.Activities;
 using API.Application.Interfaces;
+using API.Application.Profiles;
 using API.Domain;
 using API.Infrastructure;
 using API.Infrastructure.Photos;
@@ -85,7 +86,7 @@ namespace API
             services.AddAutoMapper(typeof(list.Handler));
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUserAccessor, UserAccessor>();
-
+            services.AddScoped<IProfileReader,ProfileReader>();
             services.Configure<CloudinarySettings>(Configuration.GetSection("Cloudinary"));
             
             services.AddScoped<IPhotoAccessor, PhotoAccessor>();
