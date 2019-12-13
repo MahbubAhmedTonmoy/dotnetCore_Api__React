@@ -1,6 +1,6 @@
 namespace API.Application.User
 {
-    public class User
+    public class User   // map this to  app user
     {
         public string DisplayName {get;set;}
 
