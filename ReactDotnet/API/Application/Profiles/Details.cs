@@ -24,7 +24,7 @@ namespace API.Application.Profiles
             }
             public async Task<Profile> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _profileReader.ReadProfie(request.Username);
+                return await _profileReader.ReadProfiel(request.Username);
             }
         }
     }
